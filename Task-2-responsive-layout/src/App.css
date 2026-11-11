@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Teko:wght@500;700&display=swap');
+
+:root {
+  /* Brand Colors */
+  --color-black: #070410;
+  --color-dark-purple: #231651;
+  --color-teal: #4DCCBD;
+  --color-yellow: #EEF36A;
+  --color-white: #FFFFFF;
+
+  /* Responsive Spacing Tokens */
+  --spacing-small: 16px;
+  --spacing-large: 16px; /* Mobile */
+}
+
+/* Tablet Breakpoint Spacing */
+@media (min-width: 720px) {
+  :root {
+    --spacing-large: 32px;
+  }
+}
+
+/* Desktop Breakpoint Spacing */
+@media (min-width: 1024px) {
+  :root {
+    --spacing-large: 48px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-large);
+  flex-grow: 1;
+}

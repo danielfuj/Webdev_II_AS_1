@@ -1,0 +1,95 @@
+.movie-card {
+  background-color: var(--color-dark-purple);
+  border-radius: 4px;
+  padding: var(--spacing-small);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+}
+
+
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  flex-grow: 1;
+}
+
+.movie-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.movie-description {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: var(--color-white);
+  flex-grow: 1;
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  flex-grow: 1;
+}
+
+/* Button specs: Teko font, size 2em, small border-radius */
+.watch-btn {
+  font-family: 'Teko', sans-serif;
+  font-size: 2em;
+  line-height: 0.9; /* Keeps WATCH and NOW tightly stacked */
+  background-color: var(--color-teal);
+  color: var(--color-black);
+  border: none;
+  border-radius: 4px;
+  padding: var(--spacing-small);
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  transition: background-color 0.2s ease;
+  white-space: nowrap; /* Prevents text from breaking awkwardly */
+}
+
+.watch-btn:hover {
+  background-color: var(--color-yellow);
+}
+
+/* Desktop Breakpoint Wireframe Layout Rules (>= 1024px) */
+@media (min-width: 1024px) {
+  /* Card 1 (Top Hero): Description on left, WATCH NOW button on right */
+  .card-index-0 .card-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+
+  .card-index-0 .watch-btn {
+    width: auto;
+    padding: var(--spacing-small) 32px;
+  }
+
+  /* Cards 4, 5, 6: Horizontal Row Layout (Poster left, content right) */
+  .card-index-3,
+  .card-index-4,
+  .card-index-5 {
+    flex-direction: row;
+  }
+
+  .card-index-3 .poster-wrapper,
+  .card-index-4 .poster-wrapper,
+  .card-index-5 .poster-wrapper {
+    width: 45%;
+    flex-shrink: 0;
+  }
+}
